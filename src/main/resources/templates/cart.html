@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Shop cart</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+</head>
+<body>
+
+<div class="container mt-5">
+    <h1>Carts</h1>
+    <div th:each="el : ${carts}" class="alert alert-info mt-2">
+        <h3>Cart ID: <span th:text="${el.id}"></span></h3>
+        <p>Загальна сума: <span th:text="${el.totalAmount}"></span> ₴</p>
+        <p>Кількість товарів: <span th:text="${#lists.size(el.items)}"></span></p>
+        <a th:href="'/shop/' + ${el.id}">cart</a>
+    </div>
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Categories</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+</head>
+<body>
+
+<div class="container mt-5">
+    <h1>Категорії</h1>
+    <div th:each="category : ${categories}" class="alert alert-info mt-2">
+        <h3><span th:text="${category.name}"></span></h3>
+        <p>ID: <span th:text="${category.id}"></span></p>
+        <a th:href="'/categories/' + ${category.id}" class="btn btn-info">Переглянути товари</a>
+    </div>
+</div>
+
+</body>
+</html>

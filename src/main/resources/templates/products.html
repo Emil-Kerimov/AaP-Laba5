@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Products</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+</head>
+<body>
+
+<div class="container mt-5">
+    <h1>Товари</h1>
+    <div th:each="product : ${products}" class="alert alert-info mt-2">
+        <h3><span th:text="${product.name}"></span> (ID: <span th:text="${product.id}"></span>)</h3>
+        <p><b>Бренд:</b> <span th:text="${product.brand}"></span></p>
+        <p><b>Ціна:</b> <span th:text="${product.price}"></span> ₴</p>
+        <p><b>На складі:</b> <span th:text="${product.inventory}"></span> шт.</p>
+        <p th:if="${product.category}"><b>Категорія:</b> <span th:text="${product.category.name}"></span></p>
+        <a th:href="'/products/' + ${product.id}" class="btn btn-info">Детальніше</a>
+    </div>
+</div>
+
+</body>
+</html>

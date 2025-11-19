@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Images</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+</head>
+<body>
+
+<div class="container mt-5">
+    <h1>Зображення</h1>
+    <div th:each="image : ${images}" class="alert alert-info mt-2">
+        <h3>ID: <span th:text="${image.id}"></span></h3>
+        <p><b>Ім'я файлу:</b> <span th:text="${image.fileName}"></span></p>
+        <p><b>Тип файлу:</b> <span th:text="${image.fileType}"></span></p>
+        <p th:if="${image.product}"><b>Належить товару:</b> <span th:text="${image.product.name}"></span></p>
+    </div>
+</div>
+
+</body>
+</html>
