@@ -14,6 +14,7 @@
         <p><b>Бренд:</b> <span th:text="${product.brand}"></span></p>
         <p><b>Ціна:</b> <span th:text="${product.price}"></span> ₴</p>
         <p><b>На складі:</b> <span th:text="${product.inventory}"></span> шт.</p>
+        <p><b>опис:</b> <span th:text="${product.description}"></span></p>
         <p th:if="${product.category}"><b>Категорія:</b> <span th:text="${product.category.name}"></span></p>
         <a th:href="'/products/' + ${product.id}" class="btn btn-info">Детальніше</a>
     </div>
